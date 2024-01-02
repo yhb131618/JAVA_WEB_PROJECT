@@ -1,0 +1,11 @@
+package kr.bit.model;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+//JDBC-> myBatis, JPA (db 커넥터)
+public class MemberDAO {
+	
+	private SqlSessionFactory sqlSessionFactory;
+	// [pool db1, pool db2, pool db3 ....]
+	
+}

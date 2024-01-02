@@ -1,0 +1,25 @@
+package kr.web.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+// JavaEE -> 기본프로그램 Sevelet(서블릿)의 골격
+// HttpServlet api import 해야한다.
+// 오버라이딩 재정의하기
+
+import kr.web.util.MyUtil;
+public class HelloServlet extends HttpServlet {
+
+	@Override
+	protected void service(HttpServletRequest arg0, HttpServletResponse arg1) 
+			throws ServletException, IOException {
+		
+		Myutil my = new MyUtil();
+		
+	}
+	
+}

@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="kr.bit.model.*"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+
+<%
+	int num = Integer.parseInt(request.getParameter("num"));
+	MemberDAO dao = new MemberDAO();
+	int cnt = dao.memberDelete(num);
+	if(cnt>0) {
+		response.sendRedirect("${ctx}/memberlist.do");
+	}else {
+		throw new ServletException("not Delete");
+	}
+%>

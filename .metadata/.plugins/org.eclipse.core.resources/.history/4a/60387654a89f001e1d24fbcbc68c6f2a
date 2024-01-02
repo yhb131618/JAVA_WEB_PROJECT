@@ -1,0 +1,13 @@
+package kr.bit.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+
+public interface Controller {
+	public void requestHandler(HttpServletReqest request, HttpServletRespose response) 
+	throws ServletException, IOException;{
+		
+	}
+}

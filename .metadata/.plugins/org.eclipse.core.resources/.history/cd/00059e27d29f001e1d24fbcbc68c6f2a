@@ -1,0 +1,10 @@
+package kr.bit.frontcontroller;
+
+import kr.bit.controller.Controller;
+
+public class HandlerMapping {
+	private HashMap<String, Controller> mappings;
+	public HandlerMapping() {
+		
+	}
+}

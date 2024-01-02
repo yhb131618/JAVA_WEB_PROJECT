@@ -1,0 +1,48 @@
+package kr.bit.controller;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+
+import kr.bit.model.MemberDAO;
+
+public class FileAddController implements Controller {
+	
+	@Override
+	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String UPLOAD_DIR="file_repo";
+		// 파일이름 file_repo
+		String uploadPath=request.getServletContext().getRealPath("")+File.separator+UPLOAD_DIR;
+		//
+		File currentDirPath=new File(uploadPath); // 업로드할 경로를 File 객체로 만들기
+		if(!currentDirPath.exists()) {
+
+			currentDirPath.mkdir();
+		}
+		
+		// 파일 업로드 -> 임시 저장 디렉 -> 실제 저장 디렉
+		// 파일 업로드 -> 임시&실제 디렉 (동시에 같이 씀)
+		// file upload 필요한 API - commons-fileupload, commons-io //
+		DiskFileItemFactory = new DiskFileItemFactory();
+		// 파일들이 저장되는 Factory
+		factory.setRepository(currentDirPath);
+		factory.setSzieThreshold(1024*1024);
+		
+		
+		int num = Integer.parseInt(request.getParameter("num"));
+		MemberDAO dao = new MemberDAO();
+		int cnt=dao.memberDelete(num);
+		System.out.println("delFN"+cnt);
+		response.getWriter().print(cnt);
+		
+		return null;
+	}
+
+}

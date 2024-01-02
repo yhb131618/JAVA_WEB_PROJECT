@@ -1,0 +1,5 @@
+package kr.bit.frontcontroller;
+
+public class ViewResolver {
+
+}

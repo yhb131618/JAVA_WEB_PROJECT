@@ -1,0 +1,11 @@
+package kr.web.controller;
+
+import javax.servlet.http.HttpServlet;
+
+// JavaEE -> 기본프로그램 Sevelet(서블릿)의 골격
+// HttpServlet api import 해야한다.
+
+public class HelloServlet extends HttpServlet {
+	
+
+}

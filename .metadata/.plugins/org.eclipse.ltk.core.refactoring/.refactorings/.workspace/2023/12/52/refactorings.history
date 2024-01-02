@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Copy 0 elements to &apos;MVC06&apos;&#x0D;&#x0A;- Destination element: &apos;MVC06&apos;" description="Copy compilation units" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1703431331292" target="/MVC06" units="0" version="1.0"/>&#x0A;<refactoring comment="Copy 0 elements to &apos;WebContent&apos;&#x0D;&#x0A;- Destination element: &apos;WebContent&apos;" description="Copy compilation units" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1703660057867" target="/MVC07/WebContent" units="0" version="1.0"/>
+</session>

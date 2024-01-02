@@ -1,0 +1,18 @@
+package kr.bit.model;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+//JDBC-> myBatis, JPA (db 커넥터)
+public class MemberDAO {
+	
+	private SqlSessionFactory sqlSessionFactory;
+	// [pool db1, pool db2, pool db3 ....]
+	
+	//초기화 블록-프로그램실행시 딱 한번만 실행되는 코드영역
+	static {
+		String resource = "kr/bit/mybaits/config.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		SqlSessionFactory sqlSessionFactory =
+		new SqlSessionFactoryBuilder().build(inputStream);
+	}
+}

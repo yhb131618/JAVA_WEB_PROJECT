@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="kr.bit.model.*"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="ctx" valute="${pageContext.request.contextPath}"/>
+
+<% 
+		request.setCharacterEncoding("utf-8");
+		// 1.파라미터 수집(VO)
+		int num = Integer.parseInt(request.getParameter("num"));
+		int age = Integer.parseInt(request.getParameter("age"));
+		String email = (request.getParameter("email"));
+		String phone = (request.getParameter("phone"));
+		
+		//MemverVo vo = new Member(id, pass, name, age, email, phone);
+		MemberVO vo = new MemberVO();
+		vo.setNum(num);
+		vo.setAge(age);
+		vo.setEmail(email);
+		vo.setPhone(phone);
+		
+		
+		MemberDAO dao = new MemberDAO();
+		
+		int cnt = dao.memberUpdate(vo);
+
+		//PrintWriter out = response.getWriter();
+				
+		if(cnt>0) {
+			//out.println("insert success");
+			//다시 회원리스트 보기로 복귀
+			response.sendRedirect("/${ctx}/memberlist.do");
+			
+		} else {	
+			// 가입실행 -> 예외 객체를 만들어서 WAS에 던지자.
+			throw new ServletException("not Update");
+			
+		}
+		%>
